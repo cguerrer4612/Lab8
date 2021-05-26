@@ -14,4 +14,9 @@
    1. If it were true, I would expect it to run my tests with the browser UI.
 
 5. What would your beforeAll callback look like if you wanted to start from the settings page before every test case?
-   1. 
+   1. describe('Start tests at settings page ', () => {
+		beforeAll(asynch () => {
+			await page.url("http://127.0.0.1:5500/#settings");
+			await page.waitForTimeout(500);
+		})   
+   	}
